@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 var keystone = require('keystone');
+var path = require('path')
 
 keystone.init({
 
@@ -8,8 +9,8 @@ keystone.init({
 	'brand': 'Demo',
 
 	'favicon': 'public/favicon.ico',
-	'less': 'public',
-	'static': 'public',
+	'less': path.join(__dirname, 'public'),
+	'static': path.join(__dirname, 'public'),
 
 	'views': 'templates/views',
 	'view engine': 'jade',
