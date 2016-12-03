@@ -19,4 +19,7 @@ npm-debug.log
 node_modules
 ACCOUNTS
 
+
+# IDE
+.vscode
 .env
