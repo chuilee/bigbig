@@ -14,7 +14,7 @@ exports = module.exports = function (req, res) {
 	};
 
 	// Load the current post
-	view.on('init', [function (next) {
+  view.on('init', function (next) {
 
 		var q = Post.model.findOne({
 			state: 'published',
@@ -25,8 +25,9 @@ exports = module.exports = function (req, res) {
 			locals.post = result;
 			next(err);
 		});
+	});
 
-	},function (next) {
+  view.on('init', function (next) {
     Post.model.find()
       .where('state', 'published')
       .sort('-publishedDate')
@@ -36,7 +37,10 @@ exports = module.exports = function (req, res) {
         locals.posts = results;
         next(err);
       });
-	},function (next) {
+	});
+
+
+	view.on('init', function (next) {
 		PostComment.model.find()
 			.where('post', locals.post)
 			.where('commentState', 'published')
@@ -49,7 +53,7 @@ exports = module.exports = function (req, res) {
 				locals.comments = comments;
 				next();
 			});
-	}]);
+	});
 
 
 	// Create a Comment
