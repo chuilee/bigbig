@@ -7,8 +7,8 @@ exports = module.exports = function (req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
-  console.log(locals)
 	// Init locals
+  locals.title = '画家，摄影，油画，雕塑';
 	locals.section = 'blog';
 	locals.filters = {
 		category: req.params.category,

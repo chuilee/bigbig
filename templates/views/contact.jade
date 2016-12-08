@@ -6,15 +6,15 @@ block content
 			h1 Success!
 			if user
 				p Head over to the Admin UI to see your enquiry:
-				a(href='/keystone/enquiries').btn.btn-lg.btn-primary Admin UI 
+				a(href='/keystone/enquiries').btn.btn-lg.btn-primary Admin UI
 			else
-				p(style="margin-left: 10vw; margin-right: 10vw;") To see your enquiry, sign in with the username 
+				p(style="margin-left: 10vw; margin-right: 10vw;") To see your enquiry, sign in with the username
 					code demo@keystonejs.com
-					|  and the password 
+					|  and the password
 					code demo
 					|  then go to the enquiries list.
 				a(href='/keystone/signin').btn.btn-lg.btn-primary Sign In
-	
+
 	else
 		.page-header
 			a(href='/keystone/enquiries').btn.btn-default.pull-right= user ? 'View Enquiries' : 'Sign in to View Enquiries'

@@ -22,6 +22,7 @@ exports = module.exports = function (req, res) {
 		}).populate('author categories');
 
 		q.exec(function (err, result) {
+      locals.title = result.name + '--画家，摄影，油画，雕塑';
 			locals.post = result;
 			next(err);
 		});
