@@ -25,7 +25,7 @@ mixin comment-post(comment)
 					p
 						strong= comment.author.name.full
 						if user && user.id === comment.author.id
-							|  &middot; 
+							|  &middot;
 							a(href='?remove=comment&comment=' + comment.id, title='Delete this comment', rel='tooltip', data-placement='left').comment-delete.js-delete-confirm Delete
 					p=comment.content.replace(/\n/g, '<br>')
 

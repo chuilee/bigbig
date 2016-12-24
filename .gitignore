@@ -6,8 +6,8 @@ lib-cov
 *.out
 *.pid
 *.gz
-
-*.min.css
+\
+# *.min.css
 
 pids
 logs
@@ -18,5 +18,9 @@ npm-debug.log
 
 node_modules
 ACCOUNTS
+bower_components
 
+
+# IDE
+.vscode
 .env

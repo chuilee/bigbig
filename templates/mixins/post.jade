@@ -13,7 +13,6 @@ mixin post(post)
 				p.text-muted.text-small
 					if post.publishedDate
 						time= post._.publishedDate.format('MMMM Do, YYYY')
-						|  
 					if post.author
 						span by #{post.author.name.full}
 			!= post.content.brief
