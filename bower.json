@@ -1,0 +1,21 @@
+{
+  "name": "SENSESHOUSE",
+  "description": "package",
+  "main": "",
+  "authors": [
+    "chuilee <chui.lee8@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/chuilee/bigbig",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jade-bootstrap": "*",
+    "blueimp-gallery": "^2.22.0"
+  }
+}

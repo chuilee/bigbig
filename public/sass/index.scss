@@ -1,0 +1,32 @@
+.blueimp-gallery {
+    box-shadow: none;
+    background: none;
+}
+
+.view-model {
+    .btn {
+        border: 0;
+        &:hover,
+        &:active,
+        &:focus {
+            background: none;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+.blueimp-gallery-carousel {
+    padding-bottom: 50%;
+}
+
+.blueimp-gallery {
+    >.slides {
+        >.slide {
+            >.slide-content {
+                box-shadow: 4px 4px 10px rgba(#000, .5);
+                max-height: 400px;
+            }
+        }
+    }
+}

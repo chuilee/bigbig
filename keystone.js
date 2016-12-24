@@ -5,21 +5,24 @@ var path = require('path')
 
 keystone.init({
 
-	'name': 'Keystone Demo',
-	'brand': 'Demo',
+	'name': 'SENSESHOUSE',
+	'brand': '主页',
 
 	'favicon': 'public/favicon.ico',
 	'less': path.join(__dirname, 'public'),
 	'static': path.join(__dirname, 'public'),
+	'sass': path.join(__dirname, 'public'),
+	'sass options': {
+		outputStyle: 'compressed'
+	},
 
 	'views': 'templates/views',
 	'view engine': 'jade',
 
 	'auto update': true,
-	'mongo': process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://127.0.0.1/keystone-demo',
-	'cloudinary config': 'cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo',
+	'mongo': process.env.MONGO_URI,
 
-	'session': false,
+	'session': true,
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': process.env.COOKIE_SECRET || 'demo',
@@ -28,7 +31,12 @@ keystone.init({
 	'ga domain': process.env.GA_DOMAIN,
 
 	'chartbeat property': process.env.CHARTBEAT_PROPERTY,
-	'chartbeat domain': process.env.CHARTBEAT_DOMAIN
+	'chartbeat domain': process.env.CHARTBEAT_DOMAIN,
+
+	'cloudinary config': 'cloudinary://511863381453736:32_WdRsTyMB5NZ1jcoVCBbR2bU8@chuilee',
+	'cloudinary folders': true,
+	'cloudinary secure': true,
+	'cloudinary prefix': 'senselife'
 
 });
 
