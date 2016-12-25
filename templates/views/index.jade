@@ -18,9 +18,10 @@ block content
 	else
 		.container-fluid
 			.row
-				.col-md-10.col-md-offset-1.col-sm-12
+				.col-md-12
 					div(class="blueimp-gallery blueimp-gallery-carousel", id="blueimp-gallery-carousel")
 						.slides
+						h3.title
 block page-js
 	script(src="/js/lib/blueimp-gallery/js/blueimp-gallery.min.js")
 	script.
@@ -29,14 +30,20 @@ block page-js
 			success: function(xhr) {
 				var galleries = []
 				for(var i = 0; i < xhr.length; i++) {
-					galleries.push(xhr[i].image.url)
+					galleries.push({
+						href: xhr[i].image.url,
+						title: xhr[i].name,
+						type: 'image/jpeg'
+					})
 				}
 
 				blueimp.Gallery(
 					galleries,
 					{
 						container: '#blueimp-gallery-carousel',
-						carousel: true
+						carousel: true,
+						startSlideshow: false,
+						titleElement: 'h3'
 					}
 				);
 			}
