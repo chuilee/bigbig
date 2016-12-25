@@ -7,6 +7,7 @@ lib-cov
 *.pid
 *.gz
 \
+
 # *.min.css
 
 pids
@@ -19,7 +20,6 @@ npm-debug.log
 node_modules
 ACCOUNTS
 bower_components
-
 
 # IDE
 .vscode
