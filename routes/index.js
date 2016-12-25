@@ -24,6 +24,7 @@ keystone.set('404', function (req, res, next) {
 var routes = {
 	download: importRoutes('./download'),
 	views: importRoutes('./views'),
+	json: importRoutes('./json'),
 };
 
 exports = module.exports = function (app) {
@@ -37,5 +38,8 @@ exports = module.exports = function (app) {
 
 	// Downloads
 	app.get('/download/users', routes.download.users);
+
+	// JSON
+	app.get('/json/gallery', routes.json.gallery);
 
 }

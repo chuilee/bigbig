@@ -1,33 +1,53 @@
 extends ../layouts/default
 
+block css
+	link(href="/js/lib/blueimp-gallery/css/blueimp-gallery.min.css", rel="stylesheet")
+	link(href="/sass/index.css", rel="stylesheet")
+
 block content
+	.container-fluid
+			span View Model
+			span.view-model
+			span
+				+icon-btn("screenshot")
+				+icon-btn("th-list")
+				+icon-btn("th")
 	if !post
 		.jumbotron.text-center
 			h2 Invalid post...
 			p.lead Please check the url and try again
 	else
-		.row
-			.col-md-8.col-md-offset-2
-				p: a(href='/blog').text-muted &larr; back to the blog
-				hr
-				article
-					header
-						h1= post.name
-						if post.image.exists
-							div(style="margin-bottom: 20px; margin-top: 20px;")
-								img(src=post._.image.fit(750,500)).img-responsive
-						div
-							p.text-muted.text-small Posted
-								if post.publishedDate
-									| on
-									time(datetime=post.publishedDate)=post._.publishedDate.format('MMMM Do, YYYY')
-								if post.categories && post.categories.length
-									|  in
-									each cat, cat_i in post.categories
-										a(href='/blog/' + cat.key)= cat.name
-										if cat_i < post.categories.length - 1
-											| ,
-								if post.author
-									| by #{post.author.name.full}
-						hr
-						!= post.content.full
+		.container-fluid
+			.row
+				.col-md-12
+					div(class="blueimp-gallery blueimp-gallery-carousel", id="blueimp-gallery-carousel")
+						.slides
+						h3.title
+block page-js
+	script(src="/js/lib/blueimp-gallery/js/blueimp-gallery.min.js")
+	script.
+		$.ajax({
+			url: 'http://localhost:3000/json/gallery',
+			success: function(xhr) {
+				var galleries = []
+				for(var i = 0; i < xhr.length; i++) {
+					galleries.push({
+						href: xhr[i].image.url,
+						title: xhr[i].name,
+						type: 'image/jpeg'
+					})
+				}
+
+				blueimp.Gallery(
+					galleries,
+					{
+						container: '#blueimp-gallery-carousel',
+						carousel: true,
+						startSlideshow: false,
+						titleElement: 'h3'
+					}
+				);
+			}
+		})
+
+

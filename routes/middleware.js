@@ -24,7 +24,7 @@ exports.theme = function (req, res, next) {
 	// 	'Yeti',
 	// ];
 	// res.locals.currentTheme = req.session.theme || 'Sandstone';
-  res.locals.currentTheme = 'Sandstone'
+  res.locals.currentTheme = 'Bootstrap'
 	next();
 };
 

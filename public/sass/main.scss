@@ -1,0 +1,23 @@
+.navbar {
+	padding-top: 15px;
+	border: 0;
+}
+
+.navbar-brand {
+	width: 136px;
+	height: 24px;
+	text-indent: -9999em;
+	background: url('/images/logo.png') no-repeat center;
+}
+
+.topmenu {
+	.btn {
+		border: 0; 
+
+		&:hover,
+		&:active {
+			box-shadow: none;
+			background: none;
+		}
+	}
+}

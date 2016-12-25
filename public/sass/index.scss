@@ -1,0 +1,38 @@
+.blueimp-gallery {
+    box-shadow: none;
+    background: none;
+}
+
+.view-model {
+    .btn {
+        border: 0;
+        &:hover,
+        &:active,
+        &:focus {
+            background: none;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}
+
+
+
+.blueimp-gallery {
+
+	&.blueimp-gallery-carousel {
+		padding-bottom: 43%;
+	}
+
+	>.slides {
+		>.slide {
+			>.slide-content {
+					// box-shadow: 4px 4px 10px rgba(#000, .5);
+					max-height: 400px;
+					border-width: 8px 8px 8px 8px;
+					border-style: solid;
+					border-color: #333 #ccc #ccc #333;
+			}
+		}
+	}
+}
