@@ -8,7 +8,6 @@ block content
 	.container-fluid
 			span View Model
 			span.view-model
-			span
 				+icon-btn("screenshot")
 				+icon-btn("th-list")
 				+icon-btn("th")
@@ -44,7 +43,8 @@ block page-js
 						container: '#blueimp-gallery-carousel',
 						carousel: true,
 						startSlideshow: false,
-						titleElement: 'h3'
+						titleElement: 'h3',
+						disableScroll: false
 					}
 				);
 			}
