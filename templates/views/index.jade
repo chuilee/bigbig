@@ -8,7 +8,6 @@ block content
 	.container-fluid
 			span View Model
 			span.view-model
-			span
 				+icon-btn("screenshot")
 				+icon-btn("th-list")
 				+icon-btn("th")
@@ -27,7 +26,7 @@ block page-js
 	script(src="/js/lib/blueimp-gallery/js/blueimp-gallery.min.js")
 	script.
 		$.ajax({
-			url: 'http://localhost:3000/json/gallery',
+			url: 'http://23.106.131.11:3000/json/gallery',
 			success: function(xhr) {
 				var galleries = []
 				for(var i = 0; i < xhr.length; i++) {
