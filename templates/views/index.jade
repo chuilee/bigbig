@@ -5,22 +5,12 @@ block css
 	link(href="/sass/index.css", rel="stylesheet")
 
 block content
-<<<<<<< HEAD
-	//- .container-fluid
-			span View Model
-			span.view-model
-				+icon-btn("screenshot")
-				+icon-btn("th-list")
-				+icon-btn("th")
-	if !post
-=======
 	.viewmodel-container
 		span.view-model
 			+icon-btn("screenshot")
 			+icon-btn("th-list")
 			+icon-btn("th")
 	if !posts.length
->>>>>>> 79c652a87dcdec649de6d6ef8fbb4a5f56b2e8ae
 		.jumbotron.text-center
 			h2 顶呀，出错了...
 			p.lead 小君也不知道是什么原因，去别的地方看看吧
@@ -43,40 +33,11 @@ block content
 block page-js
 	script(src="/js/lib/fullpage.js/dist/jquery.fullpage.min.js")
 	script.
-<<<<<<< HEAD
-		$.ajax({
-			url: 'http://localhost:3000/json/gallery',
-			success: function(xhr) {
-				var galleries = []
-				for(var i = 0; i < xhr.length; i++) {
-					galleries.push({
-						href: xhr[i].image.url,
-						title: xhr[i].name,
-						type: 'image/jpeg'
-					})
-				}
-
-				blueimp.Gallery(
-					galleries,
-					{
-						container: '#blueimp-gallery-carousel',
-						carousel: true,
-						startSlideshow: false,
-						titleElement: 'h3',
-						disableScroll: false,
-						onslide: function(index, slide) {
-						}
-					}
-				);
-			}
-		})
-=======
 		$(document).ready(function() {
 			$('#works-container').fullpage({
 				autoScrolling: false,
 				fitToSection: false
 			});
 		});
->>>>>>> 79c652a87dcdec649de6d6ef8fbb4a5f56b2e8ae
 
 
