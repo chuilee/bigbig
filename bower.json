@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "jade-bootstrap": "*",
-    "blueimp-gallery": "^2.22.0"
+    "blueimp-gallery": "^2.22.0",
+    "fullpage.js": "^2.9.2"
   }
 }
