@@ -5,7 +5,7 @@ block css
 	link(href="/sass/index.css", rel="stylesheet")
 
 block content
-	.container-fluid
+	//- .container-fluid
 			span View Model
 			span.view-model
 				+icon-btn("screenshot")
@@ -44,7 +44,9 @@ block page-js
 						carousel: true,
 						startSlideshow: false,
 						titleElement: 'h3',
-						disableScroll: false
+						disableScroll: false,
+						onslide: function(index, slide) {
+						}
 					}
 				);
 			}
