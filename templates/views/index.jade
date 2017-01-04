@@ -1,52 +1,43 @@
 extends ../layouts/default
 
 block css
-	link(href="/js/lib/blueimp-gallery/css/blueimp-gallery.min.css", rel="stylesheet")
+	link(href="/js/lib/fullpage.js/dist/jquery.fullpage.min.css", rel="stylesheet")
 	link(href="/sass/index.css", rel="stylesheet")
 
 block content
-	.container-fluid
-			span View Model
-			span.view-model
-				+icon-btn("screenshot")
-				+icon-btn("th-list")
-				+icon-btn("th")
-	if !post
+	.viewmodel-container
+		span.view-model
+			+icon-btn("screenshot")
+			+icon-btn("th-list")
+			+icon-btn("th")
+	if !posts.length
 		.jumbotron.text-center
-			h2 Invalid post...
-			p.lead Please check the url and try again
+			h2 顶呀，出错了...
+			p.lead 小君也不知道是什么原因，去别的地方看看吧
 	else
 		.container-fluid
 			.row
 				.col-md-12
-					div(class="blueimp-gallery blueimp-gallery-carousel", id="blueimp-gallery-carousel")
-						.slides
-						h3.title
+					div#works-container
+						div.section
+							each val in posts
+								div.slide
+									div.post-image
+										div.inset-container
+											img(src="#{val.image.url}", alt="").img-responsive
+											.post-title= val.name
+							//- div.slide
+							//- 	h1 And a normal website under it
+							//- div.slide
+							//- 	h1 A great single slider!
 block page-js
-	script(src="/js/lib/blueimp-gallery/js/blueimp-gallery.min.js")
+	script(src="/js/lib/fullpage.js/dist/jquery.fullpage.min.js")
 	script.
-		$.ajax({
-			url: 'http://23.106.131.11:3000/json/gallery',
-			success: function(xhr) {
-				var galleries = []
-				for(var i = 0; i < xhr.length; i++) {
-					galleries.push({
-						href: xhr[i].image.url,
-						title: xhr[i].name,
-						type: 'image/jpeg'
-					})
-				}
-
-				blueimp.Gallery(
-					galleries,
-					{
-						container: '#blueimp-gallery-carousel',
-						carousel: true,
-						startSlideshow: false,
-						titleElement: 'h3'
-					}
-				);
-			}
-		})
+		$(document).ready(function() {
+			$('#works-container').fullpage({
+				autoScrolling: false,
+				fitToSection: false
+			});
+		});
 
 
