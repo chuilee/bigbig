@@ -22,5 +22,5 @@ ACCOUNTS
 bower_components
 
 # IDE
-.vscode
+.vscode/*.*
 .env
