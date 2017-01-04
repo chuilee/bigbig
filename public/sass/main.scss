@@ -12,12 +12,15 @@
 
 .topmenu {
 	.btn {
-		border: 0; 
+		border: 0;
+		outline: none;
 
+		&,
 		&:hover,
 		&:active {
 			box-shadow: none;
 			background: none;
+			outline: none;
 		}
 	}
 }
