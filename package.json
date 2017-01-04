@@ -1,10 +1,10 @@
 {
-  "name": "keystone-demo",
-  "version": "1.0.1",
+  "name": "SENSESHOUSE",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/JedWatson/keystone-demo.git"
+    "url": "https://github.com/chuilee/bigbig.git"
   },
   "dependencies": {
     "async": "^1.5.0",
