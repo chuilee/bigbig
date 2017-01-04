@@ -6,7 +6,7 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
   var locals = res.locals;
 
-  locals.title = '#感官世界===SENSESLIFE#画家，摄影，油画，生活';
+  locals.title = '感官世界';
 
   // Load the current post
   view.on('init', function (next) {
