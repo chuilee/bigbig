@@ -6,7 +6,7 @@ block css
 
 block content
 	.viewmodel-container
-		span.view-model
+		//- span.view-model
 			+icon-btn("screenshot")
 			+icon-btn("th-list")
 			+icon-btn("th")
@@ -24,7 +24,7 @@ block content
 								div.slide
 									div.post-image
 										div.inset-container
-											img(src="#{val.image.url}", alt="").img-responsive
+											img(data-src="#{val.image.url}", alt="").img-responsive
 											.post-title= val.name
 							//- div.slide
 							//- 	h1 And a normal website under it
@@ -32,12 +32,27 @@ block content
 							//- 	h1 A great single slider!
 block page-js
 	script(src="/js/lib/fullpage.js/dist/jquery.fullpage.min.js")
+	script(src="/js/lib/jquery-mousewheel/jquery.mousewheel.min.js")
 	script.
 		$(document).ready(function() {
 			$('#works-container').fullpage({
+				controlArrows: false,
 				autoScrolling: false,
-				fitToSection: false
-			});
+				fitToSection: false,
+				lazyLoading: true,
+				continuousHorizontal: true,
+				afterRender: function() {
+					$(this).find('.fp-tableCell img').css('max-height', $(this).find('.fp-tableCell').eq(0).height()-300);
+
+					$(this).on('mousewheel', function(event) {
+						if(!!event.deltaY) {
+							$.fn.fullpage.moveSlideRight();
+						}else{
+							$.fn.fullpage.moveSlideLeft();
+						}
+					});
+				}
+			})
 		});
 
 

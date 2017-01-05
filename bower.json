@@ -17,6 +17,7 @@
   "dependencies": {
     "jade-bootstrap": "*",
     "blueimp-gallery": "^2.22.0",
-    "fullpage.js": "^2.9.2"
+    "fullpage.js": "^2.9.2",
+    "jquery-mousewheel": "^3.1.13"
   }
 }
