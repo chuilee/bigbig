@@ -25,6 +25,7 @@ var routes = {
 	download: importRoutes('./download'),
 	views: importRoutes('./views'),
 	json: importRoutes('./json'),
+	wx: importRoutes('./wx'),
 };
 
 exports = module.exports = function (app) {
@@ -41,5 +42,8 @@ exports = module.exports = function (app) {
 
 	// JSON
 	app.get('/json/gallery', routes.json.gallery);
+
+	// wx
+	app.get('/wexin', routes.wx.wexin);
 
 }
