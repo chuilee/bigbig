@@ -5,7 +5,7 @@ exports = module.exports = function (req, res) {
   var timestamp = req.query.timestamp;
   var echostr = req.query.echostr;
   var nonce = req.query.nonce;
-  var tmpArray = [nonce, timestamp, token];
+  var tmpArray = [nonce, timestamp, TOKEN];
   tmpArray.sort();
   var tmpStr = tmpArray.join('');
   var shasum = crypto.createHash('sha1');
