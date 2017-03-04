@@ -2,6 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var Post = new keystone.List('Post', {
+	label: '文章',
 	autokey: { from: 'name', path: 'key', unique: true },
 });
 

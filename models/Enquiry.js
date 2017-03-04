@@ -2,6 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var Enquiry = new keystone.List('Enquiry', {
+	label: '查询',
 	nocreate: true,
 });
 

@@ -2,6 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var User = new keystone.List('User', {
+	label: '用户',
 	// nodelete prevents people deleting the demo admin user
 	nodelete: true,
 });

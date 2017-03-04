@@ -6,7 +6,7 @@ var path = require('path')
 keystone.init({
 
 	'name': 'SENSESHOUSE',
-	'brand': '主页',
+	'brand': '控制面板',
 
 	'favicon': 'public/favicon.ico',
 	'less': path.join(__dirname, 'public'),
