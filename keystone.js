@@ -17,7 +17,7 @@ keystone.init({
 	},
 
 	'views': 'templates/views',
-	'view engine': 'jade',
+	'view engine': 'pug',
 
 	'auto update': true,
 	'mongo': process.env.MONGO_URI,
