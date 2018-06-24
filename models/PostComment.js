@@ -7,7 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var PostComment = new keystone.List('PostComment', {
-	label: '评论',
+	label: 'Comment',
 });
 
 PostComment.add({
