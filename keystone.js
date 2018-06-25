@@ -36,7 +36,15 @@ keystone.init({
 	'cloudinary config': 'cloudinary://511863381453736:32_WdRsTyMB5NZ1jcoVCBbR2bU8@chuilee',
 	'cloudinary folders': true,
 	'cloudinary secure': true,
-	'cloudinary prefix': 'senselife'
+	'cloudinary prefix': 'senselife',
+
+	'wysiwyg cloudinary images': true,
+	'wysiwyg additional options': {
+		'external_plugins': {
+			'uploadimage': '/js/lib/tinymce/plugins/uploadimage/plugin.min.js'
+		}
+	},
+
 
 });
 
