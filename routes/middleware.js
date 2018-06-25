@@ -4,27 +4,26 @@ exports.theme = function (req, res, next) {
 	if (req.query.theme) {
 		req.session.theme = req.query.theme;
 	}
-	// res.locals.themes = [
-	// 	'Bootstrap',
-	// 	'Cerulean',
-	// 	'Cosmo',
-	// 	'Cyborg',
-	// 	'Darkly',
-	// 	'Flatly',
-	// 	'Journal',
-	// 	'Lumen',
-	// 	'Paper',
-	// 	'Readable',
-	// 	'Sandstone',
-	// 	'Simplex',
-	// 	'Slate',
-	// 	'Spacelab',
-	// 	'Superhero',
-	// 	'United',
-	// 	'Yeti',
-	// ];
-	// res.locals.currentTheme = req.session.theme || 'Sandstone';
-  res.locals.currentTheme = 'Bootstrap'
+	res.locals.themes = [
+		'Bootstrap',
+		'Cerulean',
+		'Cosmo',
+		'Cyborg',
+		'Darkly',
+		'Flatly',
+		'Journal',
+		'Lumen',
+		'Paper',
+		'Readable',
+		'Sandstone',
+		'Simplex',
+		'Slate',
+		'Spacelab',
+		'Superhero',
+		'United',
+		'Yeti',
+	];
+	res.locals.currentTheme = req.session.theme || 'Sandstone';
 	next();
 };
 

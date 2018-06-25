@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var Types = keystone.Field.Types;
 
 var Gallery = new keystone.List('Gallery', {
-	label: '图片',
+	label: 'Gallery',
 	autokey: { from: 'name', path: 'key', unique: true },
 	plural: 'Albums',
 	singular: 'Album',
