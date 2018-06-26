@@ -22,7 +22,7 @@ keystone.init({
 	'auto update': true,
 	'mongo': process.env.MONGO_URI,
 
-	'session': true,
+	'session': false, // 暂时关闭 很耗性能
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': process.env.COOKIE_SECRET || 'demo',
@@ -39,7 +39,7 @@ keystone.init({
 	'cloudinary prefix': 'senselife',
 
 	// 'wysiwyg images': true,
-	// 'wysiwyg cloudinary images': true,
+	'wysiwyg cloudinary images': true,
 	'wysiwyg menubar': true,
 });
 
@@ -56,10 +56,10 @@ keystone.set('locals', {
 	chartbeat_domain: keystone.get('chartbeat domain')
 });
 
-// keystone.set('nav', {
-// 	'users': 'users',
-// 	'content': ['posts', 'post-categories']
-// });
+keystone.set('nav', {
+	'posts': ['posts', 'post-categories'],
+	'users': 'users'
+});
 
 keystone.set('routes', require('./routes'));
 
