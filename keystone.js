@@ -41,6 +41,11 @@ keystone.init({
 	// 'wysiwyg images': true,
 	'wysiwyg cloudinary images': true,
 	'wysiwyg menubar': true,
+	'wysiwyg additional options': {
+		'external_plugins': {
+			'uploadimage': '/js/lib/tinymce/plugins/uploadimage/plugin.min.js'
+		}
+	}
 });
 
 keystone.import('models');
