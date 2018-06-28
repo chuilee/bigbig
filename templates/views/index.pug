@@ -23,8 +23,8 @@ block content
 							each val in posts
 								div.slide
 									div.post-image
-										div.inset-container
-											img(data-src="#{val.image.url}", alt="").img-responsive
+										a(href=`/blog/post/${val.key}`).inset-container
+											img(data-src=`${val.image.url}`, alt='').img-responsive
 											.post-title= val.name
 							//- div.slide
 							//- 	h1 And a normal website under it

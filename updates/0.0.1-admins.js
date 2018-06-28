@@ -11,6 +11,7 @@ module.exports = function (done) {
 		password: 'demo',
 		isAdmin: true,
 		isProtected: true,
+		canAccessKeystone: true
 	})
 	.save(done);
 };

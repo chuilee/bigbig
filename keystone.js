@@ -6,7 +6,7 @@ var path = require('path')
 keystone.init({
 
 	'name': 'SENSESHOUSE',
-	'brand': '控制面板',
+	'brand': 'SENSESHOUSE',
 
 	'favicon': 'public/favicon.ico',
 	'less': path.join(__dirname, 'public'),
@@ -22,7 +22,7 @@ keystone.init({
 	'auto update': true,
 	'mongo': process.env.MONGO_URI,
 
-	'session': true,
+	'session': false, // 暂时关闭 很耗性能
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': process.env.COOKIE_SECRET || 'demo',
@@ -37,6 +37,7 @@ keystone.init({
 	'cloudinary folders': true,
 	'cloudinary secure': true,
 	'cloudinary prefix': 'senselife',
+<<<<<<< HEAD
 
 	'wysiwyg cloudinary images': true,
 	'wysiwyg additional options': {
@@ -45,7 +46,12 @@ keystone.init({
 		}
 	},
 
+=======
+>>>>>>> edddf345c38a8d4cac4ac86d726256d500ee4f33
 
+	// 'wysiwyg images': true,
+	'wysiwyg cloudinary images': true,
+	'wysiwyg menubar': true,
 });
 
 keystone.import('models');
@@ -59,6 +65,11 @@ keystone.set('locals', {
 	ga_domain: keystone.get('ga domain'),
 	chartbeat_property: keystone.get('chartbeat property'),
 	chartbeat_domain: keystone.get('chartbeat domain')
+});
+
+keystone.set('nav', {
+	'posts': ['posts', 'post-categories'],
+	'users': 'users'
 });
 
 keystone.set('routes', require('./routes'));

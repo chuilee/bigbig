@@ -8,7 +8,7 @@
             "name": "DEVELOP",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/keystone.js",
+            "program": "${workspaceRoot}\\keystone.js",
             "cwd": "${workspaceRoot}",
             "env": {
                 "NODE_ENV": "development"
