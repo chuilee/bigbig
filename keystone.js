@@ -37,7 +37,6 @@ keystone.init({
 	'cloudinary folders': true,
 	'cloudinary secure': true,
 	'cloudinary prefix': 'senselife',
-<<<<<<< HEAD
 
 	'wysiwyg cloudinary images': true,
 	'wysiwyg additional options': {
@@ -46,11 +45,7 @@ keystone.init({
 		}
 	},
 
-=======
->>>>>>> edddf345c38a8d4cac4ac86d726256d500ee4f33
-
 	// 'wysiwyg images': true,
-	'wysiwyg cloudinary images': true,
 	'wysiwyg menubar': true,
 });
 
