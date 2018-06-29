@@ -13,9 +13,10 @@ Post.add({
 	publishedDate: { type: Types.Date, index: true },
 	image: { type: Types.CloudinaryImage },
 	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150 },
+		brief: { type: Types.Html, wysiwyg: true, height: 150, hidden: true },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
+	images: { type: Types.CloudinaryImages },
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
 

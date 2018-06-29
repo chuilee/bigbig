@@ -3,6 +3,9 @@ extends ../layouts/default
 include ../mixins/commenting
 include ../mixins/post
 
+block css
+	link(href="/js/lib/fancybox/dist/jquery.fancybox.min.css", rel="stylesheet")
+
 block content
 	if !post
 		.jumbotron.text-center
@@ -17,9 +20,14 @@ block content
 					article
 						header
 							h1= post.name
-							if post.image.exists
-								div(style="margin-bottom: 20px; margin-top: 20px;")
-									img(src=post._.image.fit(750,500)).img-responsive
+							!= post.content.full
+							hr
+							if post.images.length
+								.row
+									each image, index in post.images
+										div.col-md-2(style="margin-bottom: 20px; margin-top: 20px;")
+											a(data-fancybox="gallery", href=`${image.url}`)
+												img(src=image.thumbnail(100,100)).img-responsive
 							div
 								p.text-muted.text-small Posted
 									if post.publishedDate
@@ -33,43 +41,64 @@ block content
 												| ,
 									if post.author
 										| by #{post.author.name.full}
-							hr
-							!= post.content.full
+
 						//-comments
-						div
+						//- div
 							+comment-form()
 							+comment-thread(comments)
 
 
 block page-js
+	script(src='/js/lib/fancybox/dist/jquery.fancybox.min.js')
 	script.
 		jQuery(function($) {
 
-			var comments = $('#comments');
-			var input = $('.comment-field-input');
-			var submit = comments.find('button[type=submit]');
-
-
-			// Scroll to comments and focus input field
-			function scrollToComments(e) {
-
-				e.preventDefault();
-
-				$('html, body').animate({ scrollTop: comments.offset().top }, 250);
-
-				input.eq(0).focus();
-			}
-			$('[href="#comments"]').click( scrollToComments );
-
-
-
-			// Check if field has content: enable/disable submit. Disable by default
-			submit.attr('disabled','disabled');
-			input.keyup(function() {
-				if ($.trim($(this).val())) {
-					submit.removeAttr('disabled');
-				} else {
-					submit.attr('disabled','disabled');
-				}
+			$('[data-fancybox="gallery"]').fancybox({
+				// Options will go here
+				nextClick: true,
+				infobar: true,
+				animationEffect: "zoom-in-out",
+				zoomOpacity: "auto",
+				animationDuration: 366,
+				transitionEffect: 'slide',
+				toolbar: "auto",
+				buttons : [
+					'thumbs',
+					'close'
+				],
+				thumbs: {
+					autoStart: true, // Display thumbnails on opening
+					hideOnClose: true, // Hide thumbnail grid when closing animation starts
+					parentEl: ".fancybox-container", // Container is injected into this element
+					axis: "y" // Vertical (y) or horizontal (x) scrolling
+				},
 			});
+
+			//- var comments = $('#comments');
+			//- var input = $('.comment-field-input');
+			//- var submit = comments.find('button[type=submit]');
+
+
+			//- // Scroll to comments and focus input field
+			//- function scrollToComments(e) {
+
+			//- 	e.preventDefault();
+
+			//- 	$('html, body').animate({ scrollTop: comments.offset().top }, 250);
+
+			//- 	input.eq(0).focus();
+			//- }
+			//- $('[href="#comments"]').click( scrollToComments );
+
+
+
+			//- // Check if field has content: enable/disable submit. Disable by default
+			//- submit.attr('disabled','disabled');
+			//- input.keyup(function() {
+			//- 	if ($.trim($(this).val())) {
+			//- 		submit.removeAttr('disabled');
+			//- 	} else {
+			//- 		submit.attr('disabled','disabled');
+			//- 	}
+			//- });
 		});

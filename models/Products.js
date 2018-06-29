@@ -1,19 +1,25 @@
-var keystone = require('keystone');
-var Types = keystone.Field.Types;
+var keystone = require('keystone'),
+    Types = keystone.Field.Types;
 
 var Product = new keystone.List('Product', {
-	label: 'Product',
-	nocreate: false,
+    autokey: { path: 'slug', from: 'title', unique: true },
+    map: { name: 'title' },
+    defaultSort: '-createdAt'
 });
 
 Product.add({
-	name: { type: Types.Name, required: true, default: {first: 'chui', last: 'lee'} },
-	email: { type: Types.Email, displayGravatar: true },
-	phone: { type: String, default: 123123123 },
-	message: { type: Types.Textarea },
+    title: { type: String, required: true },
+    name: { type: Types.Name, initial: true },
+    state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', initial: true },
+    author: { type: Types.Relationship, ref: 'User' },
+    createdAt: { type: Date, default: Date.now },
+    publishedAt: Date,
+    image: { type: Types.CloudinaryImage },
+    content: {
+        brief: { type: Types.Html, wysiwyg: true, height: 150 },
+        extended: { type: Types.Html, wysiwyg: true, height: 400 }
+    }
 });
 
-Product.track = true;
-Product.defaultSort = '-createdAt';
-Product.defaultColumns = 'name, email, enquiryType, createdAt';
+Product.defaultColumns = 'title, state|20%, author, publishedAt|15%'
 Product.register();
