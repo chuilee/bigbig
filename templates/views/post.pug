@@ -14,7 +14,7 @@ block content
 	else
 		.container
 			.row
-				.col-md-8.col-md-offset-2
+				.col-md-12
 					p: a(href='/blog').text-muted &larr; back to the blog
 					hr
 					article
@@ -27,7 +27,7 @@ block content
 									each image, index in post.images
 										div.col-md-2(style="margin-bottom: 20px; margin-top: 20px;")
 											a(data-fancybox="gallery", href=`${image.url}`)
-												img(src=image.thumbnail(100,100)).img-responsive
+												img(src=image.thumbnail(400,400)).img-responsive
 							div
 								p.text-muted.text-small Posted
 									if post.publishedDate
