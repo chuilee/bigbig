@@ -4,7 +4,6 @@ var keystone = require('keystone');
 var path = require('path')
 
 keystone.init({
-
 	'name': 'SENSESHOUSE',
 	'brand': 'SENSESHOUSE',
 
@@ -21,22 +20,6 @@ keystone.init({
 
 	'auto update': true,
 	'mongo': process.env.MONGO_URI,
-	'mongo options': {
-		server: {
-			socketOptions: {
-				socketTimeoutMS: 0,
-				connectTimeoutMS: 1000,
-				keepAlive: 120
-			}
-		},
-		replset: {
-			socketOptions: {
-				socketTimeoutMS: 0,
-				connectTimeoutMS: 1000,
-				keepAlive: 120
-			}
-		}
-	},
 
 	'session': true, // 暂时关闭 很耗性能
 	'auth': true,
