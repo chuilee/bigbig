@@ -22,7 +22,7 @@ keystone.init({
 	'auto update': true,
 	'mongo': process.env.MONGO_URI,
 
-	'session': false, // 暂时关闭 很耗性能
+	'session': true, // 暂时关闭 很耗性能
 	'auth': true,
 	'user model': 'User',
 	'cookie secret': process.env.COOKIE_SECRET || 'demo',

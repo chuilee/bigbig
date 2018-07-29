@@ -26,6 +26,7 @@ var routes = {
 	views: importRoutes('./views'),
 	json: importRoutes('./json'),
 	wx: importRoutes('./wx'),
+	api: importRoutes('./api'),
 };
 
 exports = module.exports = function (app) {
@@ -36,6 +37,10 @@ exports = module.exports = function (app) {
 	app.all('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
+	app.get('/add-event', routes.views.addEvent);
+
+	// api
+	app.post('/api/event', routes.api.event.post);
 
 	// Downloads
 	app.get('/download/users', routes.download.users);
@@ -45,5 +50,13 @@ exports = module.exports = function (app) {
 
 	// wx
 	app.get('/wexin', routes.wx.wexin);
+
+	//File Upload Route
+	app.get('/api/fileupload/list', keystone.middleware.api, routes.api.fileupload.list);
+	app.get('/api/fileupload/:id', keystone.middleware.api, routes.api.fileupload.get);
+	app.all('/api/fileupload/:id/update', keystone.middleware.api, routes.api.fileupload.update);
+	app.all('/api/fileupload/create', keystone.middleware.api, routes.api.fileupload.create);
+	app.get('/api/fileupload/:id/remove', keystone.middleware.api, routes.api.fileupload.remove);
+	// ...TO HERE.
 
 }

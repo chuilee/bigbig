@@ -17,9 +17,11 @@ block content
 					article
 						header
 							h1= post.name
-							if post.image.exists
+							!= post.content.full
+							each image in post.images.length ?  post.images : []
 								div(style="margin-bottom: 20px; margin-top: 20px;")
-									img(src=post._.image.fit(750,500)).img-responsive
+									img(src=image.url).img-responsive
+							hr
 							div
 								p.text-muted.text-small Posted
 									if post.publishedDate
@@ -33,8 +35,7 @@ block content
 												| ,
 									if post.author
 										| by #{post.author.name.full}
-							hr
-							!= post.content.full
+							
 						//-comments
 						div
 							+comment-form()
