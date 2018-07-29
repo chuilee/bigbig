@@ -21,6 +21,22 @@ keystone.init({
 
 	'auto update': true,
 	'mongo': process.env.MONGO_URI,
+	'mongo options': {
+		server: {
+			socketOptions: {
+				socketTimeoutMS: 0,
+				connectTimeoutMS: 1000,
+				keepAlive: 120
+			}
+		},
+		replset: {
+			socketOptions: {
+				socketTimeoutMS: 0,
+				connectTimeoutMS: 1000,
+				keepAlive: 120
+			}
+		}
+	},
 
 	'session': true, // 暂时关闭 很耗性能
 	'auth': true,
@@ -47,6 +63,11 @@ keystone.init({
 
 	// 'wysiwyg images': true,
 	'wysiwyg menubar': true,
+	'wysiwyg additional options': {
+		'external_plugins': {
+			'uploadimage': '/js/lib/tinymce/plugins/uploadimage/plugin.min.js'
+		}
+	}
 });
 
 keystone.import('models');
@@ -62,10 +83,10 @@ keystone.set('locals', {
 	chartbeat_domain: keystone.get('chartbeat domain')
 });
 
-keystone.set('nav', {
-	'posts': ['posts', 'post-categories'],
-	'users': 'users'
-});
+// keystone.set('nav', {
+// 	'posts': ['posts', 'post-categories'],
+// 	'users': 'users'
+// });
 
 keystone.set('routes', require('./routes'));
 
