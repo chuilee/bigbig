@@ -2,10 +2,6 @@ var keystone = require('keystone');
 var Event = keystone.list('Event');
 
 module.exports = function (req, res) {
-<<<<<<< HEAD
-
-}
-=======
     var view = new keystone.View(req, res);
 
     if (!req.body.name || !req.body.startTime || !req.body.endTime) {
@@ -25,4 +21,3 @@ module.exports = function (req, res) {
     //     view.render('addEvent');
     // });
 }
->>>>>>> 68eabc8dae96e81708a1255dcaa2fa8df9bc989a

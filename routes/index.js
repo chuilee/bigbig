@@ -37,14 +37,10 @@ exports = module.exports = function (app) {
 	app.all('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
-<<<<<<< HEAD
-	app.all('/event', routes.views.event);
-=======
 	app.get('/add-event', routes.views.addEvent);
 
 	// api
 	app.post('/api/event', routes.api.event.post);
->>>>>>> 68eabc8dae96e81708a1255dcaa2fa8df9bc989a
 
 	// Downloads
 	app.get('/download/users', routes.download.users);

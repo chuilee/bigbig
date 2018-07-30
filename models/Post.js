@@ -16,13 +16,7 @@ Post.add({
 		brief: { type: Types.Html, wysiwyg: true, height: 150, hidden: true },
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
-<<<<<<< HEAD
-	images: {
-		type: Types.CloudinaryImages
-	},
-=======
 	images: { type: Types.CloudinaryImages },
->>>>>>> 883aaf90a310cbcbc65f5131e5ad6658c55be9e9
 	categories: { type: Types.Relationship, ref: 'PostCategory', many: true },
 });
 
