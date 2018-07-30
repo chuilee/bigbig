@@ -3,8 +3,9 @@ require('dotenv').config()
 var keystone = require('keystone');
 var path = require('path')
 
+// 初始化配置数据
 keystone.init({
-	'name': 'SENSESHOUSE',
+	'name': 'SENSESHOUSE', // 数据库也将使用这个名称
 	'brand': 'SENSESHOUSE',
 
 	'favicon': 'public/favicon.ico',
@@ -18,12 +19,12 @@ keystone.init({
 	'views': 'templates/views',
 	'view engine': 'pug',
 
-	'auto update': true,
-	'mongo': process.env.MONGO_URI,
+	'auto update': true, // 是否添加种子数据 updatas/*.js
+ 	'mongo': process.env.MONGO_URI,
 
 	'session': true, // 暂时关闭 很耗性能
 	'auth': true,
-	'user model': 'User',
+	'user model': 'User', // 用户模型 对应 models/User.js
 	'cookie secret': process.env.COOKIE_SECRET || 'demo',
 
 	'ga property': process.env.GA_PROPERTY,
@@ -47,6 +48,7 @@ keystone.init({
 	}
 });
 
+// 导入模型
 keystone.import('models');
 
 keystone.set('locals', {
@@ -67,4 +69,21 @@ keystone.set('locals', {
 
 keystone.set('routes', require('./routes'));
 
-keystone.start();
+// 启动程序
+keystone.start({
+	onMount: () => {
+		console.log('server mounted')
+	},
+	onStart: () => {
+		console.log('server start')
+	},
+	onHttpServerCreated: () => {
+		console.log(' HttpServerCreated')
+	},
+	onHttpsServerCreated: () => {
+		console.log('HttpsServerCreated')
+	},
+	onSocketServerCreated: () => {
+		console.log('onSocketServerCreated')
+	}
+});

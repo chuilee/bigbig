@@ -1,7 +1,6 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
 const importRoutes = keystone.importer(__dirname);
-
 keystone.pre('routes', function (req, res, next) {
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
@@ -24,6 +23,7 @@ keystone.set('404', function (req, res, next) {
 var routes = {
 	download: importRoutes('./download'),
 	views: importRoutes('./views'),
+	api: importRoutes('./api'),
 	json: importRoutes('./json'),
 	wx: importRoutes('./wx'),
 };
@@ -36,6 +36,7 @@ exports = module.exports = function (app) {
 	app.all('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
+	app.all('/event', routes.views.event);
 
 	// Downloads
 	app.get('/download/users', routes.download.users);
