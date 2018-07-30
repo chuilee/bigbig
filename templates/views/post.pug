@@ -21,6 +21,12 @@ block content
 						header
 							h1= post.name
 							!= post.content.full
+<<<<<<< HEAD
+							each image in post.images.length ?  post.images : []
+								div(style="margin-bottom: 20px; margin-top: 20px;")
+									img(src=image.url).img-responsive
+							hr
+=======
 							hr
 							if post.images.length
 								.row
@@ -28,6 +34,7 @@ block content
 										div.col-md-2(style="margin-bottom: 20px; margin-top: 20px;")
 											a(data-fancybox="gallery", href=`${image.url}`)
 												img(src=image.thumbnail(400,400)).img-responsive
+>>>>>>> 883aaf90a310cbcbc65f5131e5ad6658c55be9e9
 							div
 								p.text-muted.text-small Posted
 									if post.publishedDate
@@ -41,7 +48,11 @@ block content
 												| ,
 									if post.author
 										| by #{post.author.name.full}
+<<<<<<< HEAD
+							
+=======
 
+>>>>>>> 883aaf90a310cbcbc65f5131e5ad6658c55be9e9
 						//-comments
 						//- div
 							+comment-form()

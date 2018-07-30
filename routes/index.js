@@ -26,6 +26,7 @@ var routes = {
 	api: importRoutes('./api'),
 	json: importRoutes('./json'),
 	wx: importRoutes('./wx'),
+	api: importRoutes('./api'),
 };
 
 exports = module.exports = function (app) {
@@ -36,7 +37,14 @@ exports = module.exports = function (app) {
 	app.all('/blog/post/:post', routes.views.post);
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
+<<<<<<< HEAD
 	app.all('/event', routes.views.event);
+=======
+	app.get('/add-event', routes.views.addEvent);
+
+	// api
+	app.post('/api/event', routes.api.event.post);
+>>>>>>> 68eabc8dae96e81708a1255dcaa2fa8df9bc989a
 
 	// Downloads
 	app.get('/download/users', routes.download.users);
@@ -46,5 +54,13 @@ exports = module.exports = function (app) {
 
 	// wx
 	app.get('/wexin', routes.wx.wexin);
+
+	//File Upload Route
+	app.get('/api/fileupload/list', keystone.middleware.api, routes.api.fileupload.list);
+	app.get('/api/fileupload/:id', keystone.middleware.api, routes.api.fileupload.get);
+	app.all('/api/fileupload/:id/update', keystone.middleware.api, routes.api.fileupload.update);
+	app.all('/api/fileupload/create', keystone.middleware.api, routes.api.fileupload.create);
+	app.get('/api/fileupload/:id/remove', keystone.middleware.api, routes.api.fileupload.remove);
+	// ...TO HERE.
 
 }

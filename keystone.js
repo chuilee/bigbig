@@ -38,8 +38,14 @@ keystone.init({
 	'cloudinary secure': true,
 	'cloudinary prefix': 'senselife',
 
-	// 'wysiwyg images': true,
 	'wysiwyg cloudinary images': true,
+	'wysiwyg additional options': {
+		'external_plugins': {
+			'uploadimage': '/js/lib/tinymce/plugins/uploadimage/plugin.min.js'
+		}
+	},
+
+	// 'wysiwyg images': true,
 	'wysiwyg menubar': true,
 	'wysiwyg additional options': {
 		'external_plugins': {

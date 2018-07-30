@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 doctype html
 html(lang="en")
   head
@@ -24,3 +25,33 @@ html(lang="en")
               textarea(name='description', placeholder='event description...' rows=4)
             .form-actions
               button(type='submit').btn.btn-primary Send
+=======
+extends ../layouts/default
+
+block css
+	link(href="/js/lib/fullpage.js/dist/jquery.fullpage.min.css", rel="stylesheet")
+	link(href="/sass/index.css", rel="stylesheet")
+  
+block content
+	if enquirySubmitted
+		h3 Your Event has been added to the database
+	else
+		.container
+			.row: .col-sm-8.col-md-6
+				form(method='post', action='/api/event')
+					input(type='hidden', name='action')
+					.form-group
+						label Event Name
+						input(type='text', name='name').form-control
+					.form-group
+						label Start Time
+						input(type='datetime-local', name='startTime').form-control
+					.form-group
+						label End Time
+						input(type='datetime-local', name='endTime').form-control
+					.form-group
+						label Description
+						textarea(name='description', placeholder='event description...' rows=4).form-control
+					.form-actions
+						button(type='submit').btn.btn-primary Send
+>>>>>>> 68eabc8dae96e81708a1255dcaa2fa8df9bc989a
