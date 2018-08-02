@@ -24,6 +24,19 @@ exports.theme = function (req, res, next) {
 		'Yeti',
 	];
 	res.locals.currentTheme = req.session.theme || 'Bootstrap';
+
+	res.locals.navLinks = [{
+			label: 'About',
+			key: 'about',
+			href: '/pages/page/about'
+		}, // adding About to blog navigation
+		{
+			label: 'Blog',
+			key: 'blog',
+			href: '/blog'
+		},
+	];
+
 	next();
 };
 
@@ -34,6 +47,8 @@ exports.flashMessages = function (req, res, next) {
 		warning: req.flash('warning'),
 		error: req.flash('error')
 	};
-	res.locals.messages = _.any(flashMessages, function (msgs) { return msgs.length }) ? flashMessages : false;
+	res.locals.messages = _.any(flashMessages, function (msgs) {
+		return msgs.length
+	}) ? flashMessages : false;
 	next();
 };

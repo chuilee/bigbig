@@ -38,6 +38,7 @@ exports = module.exports = function (app) {
 	app.get('/gallery', routes.views.gallery);
 	app.all('/contact', routes.views.contact);
 	app.get('/add-event', routes.views.addEvent);
+	app.get('/page/:page', routes.views.page);
 
 	// api
 	app.post('/api/event', routes.api.event.post);

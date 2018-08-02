@@ -5,7 +5,7 @@ var path = require('path')
 
 // 初始化配置数据
 keystone.init({
-	'name': 'SENSESHOUSE', // 数据库也将使用这个名称
+	'name': 'SENSESHOUSE', //
 	'brand': 'SENSESHOUSE',
 
 	'favicon': 'public/favicon.ico',
@@ -20,7 +20,7 @@ keystone.init({
 	'view engine': 'pug',
 
 	'auto update': true, // 是否添加种子数据 updatas/*.js
- 	'mongo': process.env.MONGO_URI,
+	'mongo': process.env.MONGO_URI,
 
 	'session': true, // 暂时关闭 很耗性能
 	'auth': true,
@@ -68,10 +68,11 @@ keystone.set('locals', {
 	chartbeat_domain: keystone.get('chartbeat domain')
 });
 
-// keystone.set('nav', {
-// 	'posts': ['posts', 'post-categories'],
-// 	'users': 'users'
-// });
+keystone.set('nav', {
+	posts: ['posts', 'post-categories'],
+	users: 'users',
+	pages: 'pages', // adding pages to Admin UI nav
+});
 
 keystone.set('routes', require('./routes'));
 
