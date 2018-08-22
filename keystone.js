@@ -22,7 +22,7 @@ keystone.init({
 	'auto update': true, // 是否添加种子数据 updatas/*.js
 	'mongo': process.env.MONGO_URI,
 
-	'session': true, // 暂时关闭 很耗性能
+	'session': false, // 暂时关闭 很耗性能
 	'auth': true,
 	'user model': 'User', // 用户模型 对应 models/User.js
 	'cookie secret': process.env.COOKIE_SECRET || 'demo',

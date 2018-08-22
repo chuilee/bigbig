@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <title>营销小测试</title>
+  <!-- build:css css/style.css -->
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./bower_components/swiper/dist/css/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <!-- endbuild -->
+
+  <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js "></script>
+  
+  <!-- build:js js/main.js -->
+  <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="./bower_components/swiper/dist/js/swiper.jquery.min.js"></script>
+  <script src="./scripts/main.js"></script>
+  <!-- endbuild -->
+</head>
+<body>
+<div class="music-logo"></div>
+<audio loop id="js-sound"></audio>
+<!-- Swiper -->
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide question-page index-page">
+      <div class="index-container">
+        <img src="./images/title.png" alt="" class="title">
+        <img src="./images/welcome.png" alt="" class="welcome">
+      </div>
+      <img src="./images/button_start.png" alt="" class="start pulse">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>1</em>/12</span>
+        </div>
+        <p class="title">IP应用是当前营销界的热点，请问以下哪位大IP没有被大范围商业应用</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.李白</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.苏轼</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>C.辛弃疾</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.毛泽东</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>2</em>/12</span>
+        </div>
+        <p class="title">影响消费者行为的主要心理过程不包括哪一项</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.动机</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.感知</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.学习</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.记忆</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>E.推理</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>3</em>/12</span>
+        </div>
+        <p class="title">美国《连线》杂志是对全互联网经济发展影响最为深远的刊物之一，《连线》系的编辑们贡献了一批优秀的互联网营销书籍，请问下列哪本不是《连线》系作品</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.《必然》</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>B.《从0到1》</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.《长尾理论》</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.《众包》</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>4</em>/12</span>
+        </div>
+        <p class="title">下列造成品牌危机的原因中，不属于品牌策略因素的是</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.盲目延伸</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.定位失误</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.产品无差异化</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>D.产品质量因素</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">  
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>5</em>/12</span>
+        </div>
+        <p class="title">以下哪家企业不属于分享经济模式</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.滴滴出行</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.摩拜单车</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.途家网</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>D.七天连锁</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>6</em>/12</span>
+        </div>
+        <p class="title">以下哪一项是O2O模式</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.小明在京东购买了一本书，当天就送到了</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.小明在视频网站注册了会员，马上就可以看大片了</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>C.小明在线买了两张电影票，准备今晚约女朋友去看</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.小明一边听着罗辑思维一边在公园跑步</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">  
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>7</em>/12</span>
+        </div>
+        <p class="title">下面的选项中哪一家公司属于O2O模式</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.小米</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.王老吉</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>C.猪兼强</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.蓝莓会</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>8</em>/12</span>
+        </div>
+        <p class="title">以下哪个选项不是企业自媒体</p>
+        <div class="options">
+          <div class="option-item" data-correct="true">
+            <p>A.咪蒙</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.尚品宅配</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.分众专享</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.韩后Hanhoo</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>9</em>/12</span>
+        </div>
+        <p class="title">市场细分的概念是美国学者(  )提出的</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.迈克尔·波特</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.麦卡锡</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.菲利普·科特勒</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>D.温德尔·史密斯</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>10</em>/12</span>
+        </div>
+        <p class="title">以下对4P到4C的转变描述中，不正确的是</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.从产品到需求</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.从价格到成本</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.从渠道到便利</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>D.从促销到广告</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>11</em>/12</span>
+        </div>
+        <p class="title">下列网络整合营销4I原则中错误的是</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.趣味原则</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.利益原则</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.互动原则</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.个性原则</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>E.影响原则</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/button_next.png" alt="" class="next">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="question-container">
+        <div class="position">
+          <span><em>12</em>/12</span>
+        </div>
+        <p class="title">以下哪一项不会被微信平台封号</p>
+        <div class="options">
+          <div class="option-item" data-correct="false">
+            <p>A.外挂</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>B.刷粉</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>C.诱导分享</p>
+          </div>
+          <div class="option-item" data-correct="false">
+            <p>D.恶意篡改</p>
+          </div>
+          <div class="option-item" data-correct="true">
+            <p>E.抽奖竞猜</p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/done.png" alt="" class="next done">
+    </div>
+    <div class="swiper-slide question-page userinfo-page">
+      <div class="question-container">
+        <img src="./images/clipboard.png" alt="" class="clipboard">
+        <div class="inputs">
+          <p>填写下栏信息马上知晓</p>
+          <div class="input-container">
+            <img src="./images/input_bg.png" alt="" class="input-img">
+            <input type="text" name="" value="" placeholder="姓名" class="name">
+          </div>
+          <div class="input-container input-tel">
+            <img src="./images/input_bg.png" alt="" class="input-img">
+            <input type="tel" name="" value="" placeholder="电话" class="tel">
+          </div>
+          <p class="blueberry-infos">蓝莓会承诺将保证您的信息安全</p>
+        </div>
+      </div>
+      <img src="./images/button_result.png" alt="" class="next result">
+    </div>
+    <div class="swiper-slide question-page">
+      <div class="result-container">
+        <p class="text-center">恭喜老板，您的测试得分如下</p>
+        <div class="score-container">
+          <img src="./images/score.png" alt="" class="score-img">
+          <span class="score">80分</span>
+        </div>
+        <p class="tips">您击败了<span class="percent" id="js-percent">79%</span>的人<br>
+          <span id="js-message">长按扫码了解更多课程信息长按扫码了解更多课程信息长按扫码了解更多课程信息</span>
+        </p>
+        
+        <img src="./images/qrcode.jpg" alt="" class="qrcode">
+        <p class="qrcode-tips">长按扫码了解更多课程信息</p>
+        <img src="./images/button_share.png" alt="" class="share">
+        <img src="./images/logo.png" alt="" class="logo">
+        <div class="share-tips">
+          <img src="./images/arrow.png" alt="" class="arrow">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="error-tips pos-abs">请输入正确的手机号码</div>
+</body>
+</html>

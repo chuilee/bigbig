@@ -1,0 +1,41 @@
+/* position */
+.pos-a {
+    position: absolute !important;
+}
+
+/* display */
+.hide {
+    opacity: 0!important;
+}
+
+#layout {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: black;
+}
+
+.page,
+.page-init {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.page-init {
+    z-index: 10;
+}
+
+.lock {
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}

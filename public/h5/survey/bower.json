@@ -1,0 +1,25 @@
+{
+  "name": "pixijs-demos",
+  "authors": [
+    "chuilee <chui.lee8@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage.js": "^2.8.9",
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "swiper": "^3.4.1",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}

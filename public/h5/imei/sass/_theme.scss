@@ -1,0 +1,660 @@
+html,body {
+    font-family: "Microsoft Yahei";
+    font-size: 62.5%;
+    color: #3e3a39;
+}
+/* music logo */
+.music-logo {
+    width: 35px;
+    height: 35px;
+    background: url("../img/music.gif");
+    background-size: 35px auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+}
+
+.music-logo.playing {
+    -webkit-animation: 2.3s spin linear infinite;
+}
+
+/* arrow */
+.arrow {
+    display: inline-block;
+    width: 17px;
+    height: 15px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -8px;
+    background: url(../img/arrow.png) no-repeat 0 0;
+    background-size: 16px auto;
+    -webkit-animation: arrow 1.5s infinite 0s;
+    opacity: 0;
+}
+
+/* loading */
+.page-loading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 30;
+    background: #061535;
+    overflow: hidden;
+}
+
+/* pages */
+.page {
+	background: url(../img/bg.jpg) no-repeat;
+    background-position: 0 0;
+
+    .wrapper {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -150px;
+        width: 300px;
+        height: 100%;
+    }
+
+}
+
+/* p1 第一页 */
+#p1 {
+    .logo-container {
+        position: relative;
+        margin: 3rem auto 0;
+        width: 90%;
+        height: 220px;
+
+        .name {
+            bottom: -10px;
+            animation-delay: .1s;
+        }
+    }
+
+    .text-container {
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        height: 145px;
+
+        .text1 {
+            top: 0;
+            animation-delay: .2s;
+        }
+        .text2 {
+            top: 50px;
+            animation-delay: .3s;
+        }
+        .text3 {
+            top: 100px;
+            animation-delay: .4s;
+        }
+    }
+
+    .info {
+        position: relative;
+        margin-top: 3rem;
+        text-align: center;
+        height: 100px;
+        .date {
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: bold;
+            animation-delay: .5s;
+        }
+        
+        .address,
+        .slogan {
+            left: 0;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: .5rem 0;
+            line-height: 1;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .address {
+            top: 30px;
+            animation-delay: .6s;
+        }
+
+        .slogan {
+            top: 60px;
+            font-size: 1.6rem;
+            line-height: 1.4;
+            animation-delay: .7s;
+        }
+    }
+    
+    .company {
+        bottom: 2rem;
+        left: 50%;
+        display: block;
+        width: 300px;
+        margin-left: -150px;
+        animation-delay: .4s;
+    }
+
+}
+
+/* p2 第二页 */
+#p2 {
+
+    .fly {
+        img {
+            width: 20%;
+        }
+
+        &.fly1 {
+            left: 40px;
+            top: 20px;
+        }
+        &.fly2 {
+            right: -108px;
+            top: 60px;
+        }
+        &.fly3 {
+            left: 0;
+            bottom: 20px;
+        }
+
+        &.fly-arrow {
+            left: 50%;
+            top: 230px;
+            animation-delay:.3s
+        }
+    }
+    .text1,
+    .text2 {
+        margin-left: -5%;
+        width: 110%;
+        font-size: 1.4rem;
+        line-height: 2;
+        text-align: center;
+    }
+
+    .text1 {
+        top: 50px;
+    }
+
+    .text2 {
+        top: 260px;
+        animation-delay:.5s
+    }
+}
+
+/* p3 第三页 */
+.guest-wrapper {
+    .title {
+        top: 20px;
+        left: 50%;
+        margin-left: -135px;
+        width: 270px;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        text-align: center;
+        font-size: 2rem;
+        border-radius: 5px;
+        background: #00359e;
+    }
+
+    .item {
+        left: 5%;
+        padding: 7px;
+        margin: 0 auto;
+        width: 90%;
+        height: 68px;
+        box-sizing: border-box;
+        background: #0081e1;
+        
+        img {
+            float: left;
+            height: 100%;
+        }
+
+        .name,
+        .position {
+            margin-top: 0px;
+            margin-bottom: 5px;
+            margin-left: 65px;
+            color: #fff;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+
+        &.item1 {
+            top: 120px;
+            animation-delay: .2s;
+        }
+        &.item2 {
+            top: 200px;
+            animation-delay: .4s;
+        }
+        &.item3 {
+            top: 280px;
+            animation-delay: .6s;
+        }
+        &.item4 {
+            top: 360px;
+            animation-delay: .8s;
+        }
+        &.item5 {
+            top: 440px;
+            animation-delay: 1s;
+        }
+        &.item6 {
+            top: 520px;
+            animation-delay: 1.2s;
+        }
+    }
+}
+#p3 {
+    .fly {
+        img {
+            width: 30%;
+        }
+
+        &.fly1 {
+            top: 80px;
+            right: -150px;
+        }
+
+        &.fly2 {
+            top: 280px;
+            left: 10px;
+        }
+    }
+}
+
+/* p4 第四页 */
+#p4 {
+    .fly {
+        img {
+            width: 30%;
+        }
+
+        &.fly1 {
+            top: 80px;
+            right: -93px;
+        }
+
+        &.fly2 {
+            top: 20px;
+            left: 0;
+        }
+    }
+}
+
+/* p5 第五页 */
+#p5 {
+    .fly {
+        img {
+            width: 30%;
+        }
+
+        &.fly1 {
+            top: 80px;
+            right: -60px;
+        }
+
+        &.fly2 {
+            top: 20px;
+            left: 0;
+        }
+    }
+
+    .line {
+        position: absolute;
+        top: 100px;
+        bottom: 60px;
+        left: 50%;
+        margin-left: -1px;
+        width: 0;
+        border: 1px dashed #023591; 
+    }
+
+    .title {
+        top: 10px;
+        left: 50%;
+        margin-left: -135px;
+        width: 270px;
+        height: 60px;
+        line-height: 60px;
+        color: #fff;
+        text-align: center;
+        font-size: 2.4rem;
+        border-radius: 5px;
+        background: #00359e;
+    }
+
+    .info {
+        left: 50%;
+        bottom: 20px;
+        margin-left: -57px;
+        color: #023591;
+        font-size: 2rem;
+    }
+
+    .guest-text {
+        top: 80px;
+        padding: 0 10px;
+        width: 50%;
+        box-sizing: border-box;
+
+
+
+        &.left {
+            left: 0;
+            .item {
+                text-align: right;
+            }
+        }
+
+        &.right {
+
+            right: 0;
+        }
+
+        .item {
+            margin-top: 5px;
+            list-style: none;
+            
+            .name,
+            .position {
+                display: block;
+            }
+
+            .name {
+                font-size: 1.2rem;
+                font-weight: bold;
+            }   
+            .position {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+/* p6 第六页 */
+#p6 {
+
+    .fly {
+        img {
+            width: 30%;
+        }
+
+        &.fly1 {
+            bottom: 80px;
+            left: 40px;
+        }
+
+        &.fly2 {
+            bottom: 20px;
+            right: 0;
+        }
+    }
+
+    .join-container {
+        top: 50%;
+        left: 50%;
+        margin-left: -150px;
+        margin-top: -180px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: #0081e1;
+        color: #fff;
+        text-align: center;
+
+        .info,
+        .price,
+        .slogan {
+            width: 100%;
+        }
+
+        .info {
+            top: 40px;
+            font-size: 2rem;
+            animation-delay: .3s;
+        }
+
+        .price {
+            top: 100px;
+            font-size: 2rem;
+            animation-delay: .4s;
+            strong {
+                font-size: 2.6rem;
+            }
+
+            &::after,
+            &::before {
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                display: block;
+                content: " ";
+                width: 0;
+                height: 0;
+                border-width: 10px;
+                border-style: solid;
+                border-color: #fff transparent transparent transparent;
+            }
+
+            &::after {
+                bottom: -30px;
+            }
+        }
+
+        .slogan {
+            top: 160px;
+            font-size: 2.4rem;
+            animation-delay: .5s;
+
+            small {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+#baoming-btn {
+    bottom: 40px;
+    left: 50%;
+    margin-left: -100px;
+    display: block;
+    width: 200px;
+    height: 50px;
+    background: url(../img/p6/p6-button.png) no-repeat center;
+    background-size: contain;
+    text-indent: -9999rem;
+    animation-delay: .8s;
+}
+
+/* p7 第七页 */
+#p7 {
+    
+    .fly {
+        img {
+            width: 30%;
+        }
+
+        &.fly1 {
+            top: 80px;
+            right: -93px;
+        }
+
+        &.fly2 {
+            top: 20px;
+            left: 0;
+        }
+    }
+
+    .afterParty {
+        
+        .title1 {
+            top: 20px;
+            left: 50%;
+            margin-left: -135px;
+            width: 270px;
+            height: 80px;
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            border-radius: 5px;
+            background: #00359e;
+            line-height: 1.2;
+
+            small {
+                font-size: 1.2rem;
+                font-weight: normal;
+            }
+
+            span {
+                font-size: 1.4rem;
+                font-weight: normal;
+            }
+        }
+
+        .item {
+            top: 160px;
+            left: 50%;
+            margin-left: -100px;
+            width: 200px;
+            font-size: 1.6rem;
+            .title {
+                margin: 0 auto;
+                display: block;
+                width: 70%;
+                height: 30px;
+                border-radius: 5px;
+                background: #00359e;
+                color: #fff;
+                text-align: center;
+                line-height: 30px;
+            }
+            .text {
+                margin-top: 10px;
+                display: block;
+                text-align: center;
+            }
+
+            &.item1 {
+                top: 220px;
+                animation-delay: .4s;
+            }
+
+            &.item2 {
+                top: 300px;
+                animation-delay: .5s;
+            }
+
+            &.item3 {
+                top: 380px;
+                animation-delay: .6s;
+            }
+        }
+    }
+
+    .qrcode {
+        bottom: 40px;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        height: 120px;
+        animation-delay: .8s;
+
+        img {
+            width: 100%;
+        }
+
+        .text {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .slogan {
+        top: 120px;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem;
+        animation-delay: .2s;
+    }
+
+}
+
+#baoming {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #c4ffff;
+
+    .title {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0 2rem;
+        width: 100%;
+        height: 5rem;
+        background: #346BD7;
+        color: #fff;
+        line-height: 5rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    input,
+    .input {
+        display: block;
+        padding-left: 2rem;
+        margin: 1.5rem 10% 0;
+        height: 4.4rem;
+        width: 80%;
+        line-height: 4.4rem;
+        border-radius: .5rem;
+        border: 1px solid #eee;
+        box-sizing: border-box;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    }
+
+    .sf {
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .baoming-btns {
+        text-align: center;
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            width: 10rem;
+            height: 3rem;
+            line-height: 3rem;
+            text-align: center;
+            background: #346BD7;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 2rem;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+
+            &.queding {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
