@@ -1,7 +1,30 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
 const importRoutes = keystone.importer(__dirname);
+const cors = require('cors'); // 跨域
+
+const corsOptions = {
+	origin:[/^http(s*):\/\/127.0.0.1(:\d*)/, /^http(s*):\/\/localhost(:\d*)/],
+	methods:['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+	alloweHeaders:['Content-Type', 'Authorization']
+}
+
+keystone.pre('routes', cors(corsOptions));
+
 keystone.pre('routes', function (req, res, next) {
+	// Website you wish to allow to connect
+	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+
+	// Request methods you wish to allow
+	// res.setHeader('Access-Control-Allow-Methods', 'GET, POST,HEAD');
+
+	// Request headers you wish to allow
+	// res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+	// Set to true if you need the website to include cookies in the requests sent
+	// to the API (e.g. in case you use sessions)
+	res.setHeader('Access-Control-Allow-Credentials', true);
+
 	res.locals.navLinks = [
 		{ label: 'Home', key: 'home', href: '/' },
 		{ label: 'Blog', key: 'blog', href: '/blog' },
@@ -42,6 +65,9 @@ exports = module.exports = function (app) {
 
 	// api
 	app.post('/api/event', routes.api.event.post);
+	app.post('/api/login/signin', routes.api.login.signin);
+	app.get('/api/login/signout', routes.api.login.signout);
+	app.get('/api/menu/list', routes.api.menu.list);
 
 	// Downloads
 	app.get('/download/users', routes.download.users);

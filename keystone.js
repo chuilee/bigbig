@@ -1,12 +1,13 @@
 require('dotenv').config()
 
 var keystone = require('keystone');
-var path = require('path')
+var path = require('path');
+var redis = require('connect-redis')
 
 // 初始化配置数据
 keystone.init({
-	'name': 'SENSESHOUSE', //
-	'brand': 'SENSESHOUSE',
+	'name': 'CHUI1900', //
+	'brand': 'CHUI1900',
 
 	'favicon': 'public/favicon.ico',
 	'less': path.join(__dirname, 'public'),
@@ -22,10 +23,35 @@ keystone.init({
 	'auto update': true, // 是否添加种子数据 updatas/*.js
 	'mongo': process.env.MONGO_URI,
 
-	'session': false, // 暂时关闭 很耗性能
+	'session': true, // 暂时关闭 很耗性能
 	'auth': true,
 	'user model': 'User', // 用户模型 对应 models/User.js
-	'cookie secret': process.env.COOKIE_SECRET || 'demo',
+	'cookie secret': process.env.COOKIE_SECRET || 'chui1900.com',
+	'session store': 'connect-redis', // mongo
+	'session options': {
+		key: 'sid',
+		resave: true,
+		saveUninitialized: true,
+		cookie: {
+			path: '/',
+			httpOnly: true,
+			secure: false,
+			maxAge: 10 * 60 * 1000
+			// domain: 'localhost:4200'
+		}
+	},
+
+	'session store': function(session) {
+		return new (redis(session))({
+			"host": "127.0.0.1", // Redis server hostname
+			"port": "6379", // Redis server port
+			// "ttl": "", // Redis session TTL in seconds
+			// "db": "", // Database index to use
+			// "pass": "", // Password for Redis authentication
+			"prefix": "chui1900:", // Key prefix defaulting to "sess:"
+			// "url": "redis://127.0.0.1:6379/0", // e.g. redis://user:pass@host:port/db
+		})
+	},
 
 	'ga property': process.env.GA_PROPERTY,
 	'ga domain': process.env.GA_DOMAIN,

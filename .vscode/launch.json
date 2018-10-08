@@ -12,11 +12,12 @@
             "cwd": "${workspaceRoot}",
             "env": {
                 "NODE_ENV": "development"
-            }
+						},
+						"outputCapture": "std" // 将morgan日志输入到控制台
         },
         {
             "name": "Attach to Process",
-            "type": "node2",
+            "type": "node",
             "request": "attach",
             "port": 9229
         }
