@@ -1,8 +1,12 @@
-require('dotenv').config()
-
 var keystone = require('keystone');
 var path = require('path');
 var redis = require('connect-redis')
+
+require('dotenv').config({
+	path: path.join(__dirname, './.env')
+})
+
+console.log(process.env.PORT)
 
 // 初始化配置数据
 keystone.init({
@@ -22,6 +26,8 @@ keystone.init({
 
 	'auto update': true, // 是否添加种子数据 updatas/*.js
 	'mongo': process.env.MONGO_URI,
+
+	'port': process.env.PORT || 3000,
 
 	'session': true, // 暂时关闭 很耗性能
 	'auth': true,

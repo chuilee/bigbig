@@ -42,7 +42,58 @@ html
 		//- scripts
 		script(src='/js/lib/jquery/jquery-1.10.2.min.js')
 		script(src='/js/lib/bootstrap/modal.js')
-
+		script(src='http://res.wx.qq.com/open/js/jweixin-1.4.0.js')
+		script.
+			$.ajax({
+				url: '/sign',
+				method: 'GET',
+				success: function(response) {
+					wx.config({
+						debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+						appId: response.appId, // 必填，公众号的唯一标识
+						timestamp: response.timestamp, // 必填，生成签名的时间戳
+						nonceStr: response.nonceStr, // 必填，生成签名的随机串
+						signature: response.signature,// 必填，签名
+						jsApiList: [
+							'onMenuShareTimeline',
+							'onMenuShareAppMessage',
+							'onMenuShareQQ',
+							'onMenuShareWeibo',
+							'onMenuShareQZone',
+							'startRecord',
+							'stopRecord',
+							'onVoiceRecordEnd',
+							'playVoice',
+							'pauseVoice',
+							'stopVoice',
+							'onVoicePlayEnd',
+							'uploadVoice',
+							'downloadVoice',
+							'chooseImage',
+							'previewImage',
+							'uploadImage',
+							'downloadImage',
+							'translateVoice',
+							'getNetworkType',
+							'openLocation',
+							'getLocation',
+							'hideOptionMenu',
+							'showOptionMenu',
+							'hideMenuItems',
+							'showMenuItems',
+							'hideAllNonBaseMenuItem',
+							'showAllNonBaseMenuItem',
+							'closeWindow',
+							'scanQRCode',
+							'chooseWXPay',
+							'openProductSpecificView',
+							'addCard',
+							'chooseCard',
+							'openCard'
+						] // 必填，需要使用的JS接口列表
+					});
+				}
+			})
 		if user && user.canAccessKeystone
 			script(src='/keystone/js/content/editor.js')
 

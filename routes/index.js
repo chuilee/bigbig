@@ -77,6 +77,7 @@ exports = module.exports = function (app) {
 
 	// wx
 	app.get('/wexin', routes.wx.wexin);
+	app.get("/sign", routes.wx.sign);
 
 	//File Upload Route
 	app.get('/api/fileupload/list', keystone.middleware.api, routes.api.fileupload.list);
